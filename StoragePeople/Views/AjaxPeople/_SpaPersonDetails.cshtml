@@ -1,0 +1,22 @@
+﻿@model Person
+
+
+<div id="@("personId"+Model.Id)" class="row">
+    <h2>Person Details</h2>
+    <div class="row ">
+        <div class="col-3 mt-2">Namn</div>
+        <div class="col-3 mt-2">Phonenumber</div>
+        <div class="col-3 mt-2">City</div>
+        <div class="col-3 mt-2">id</div>
+    </div>
+    <div class="row">
+        <div class="col-3 mt-2">@Model.Name</div>
+        <div class="col-3 mt-2">@Model.PhoneNumber</div>
+        <div class="col-3 mt-2">@Model.CityId</div>
+        <div class="col-3 mt-2">@Model.Id</div>
+    </div>
+    <div class="col">
+        <button onclick="getSpaDeleteWithAjax('@Url.Action("SpaAjaxDelete","AjaxPeople", new { id = Model.Id })', '@("personId" + Model.Id)')" class="btn btn-dark">Delete</button>
+        <button onclick="getSpaWithAjax('@Url.Action("SpaPeopleRow","AjaxPeople", new { id = Model.Id })', '@("personId" + Model.Id)')" class="btn btn-dark">Close</button>
+    </div>
+</div>

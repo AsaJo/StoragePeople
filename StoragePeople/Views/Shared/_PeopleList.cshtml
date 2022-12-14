@@ -1,0 +1,15 @@
+﻿@model List<Person>
+
+<div class="row font-weight-bold mt-3">
+    <div class="col-4">Name</div>
+    <div class="col-4">City</div>
+    <div class="col-4">Id</div>
+</div>
+
+@foreach (Person person in Model)
+{
+    <div class="row">
+        <partial name="_PeopleDisplay" model="person" />
+    </div>
+}
+

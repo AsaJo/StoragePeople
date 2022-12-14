@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Single page Pepole with Ajax</h1>
+
+<button class="btn-dark" onclick="ajaxPeopleList('@Url.Action("PartialViewPeople", "People")')">Get people list</button>
+<div class="row"></div>
+<br />
+<div class="form-group col-sm-11">
+    <input class="form-control " type="number" name="id" id="idInput" placeholder="People Id" />
+</div>
+<button class="btn-dark" onclick="ajaxPost('@Url.Action("PartialViewDetails","People")', 'idInput')">Details</button>
+<button class="btn-dark" onclick="ajaxPost('@Url.Action("AjaxDelete","People")', 'idInput')">Delete</button>
+<br />
+
+<div id="result"></div>
+<hr />
+
+<h2>SPA Singel page version 0.1.01</h2>
+
+<div id="spaPeopleList"></div>
+
+<script>
+    window.addEventListener("load", () => {
+        console.log("load triggerd");
+        getSpaWithAjax('AjaxPeople/SpaPeopleList', 'spaPeopleList');/* For loding ajax functions*/
+    });
+    /*$(document).ready(function () {
+        getSpaWithAjax('AjaxPeople/SpaPeopleList', 'spaPeopleList');
+    });*/
+</script>

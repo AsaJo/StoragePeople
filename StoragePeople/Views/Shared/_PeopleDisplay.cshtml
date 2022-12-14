@@ -1,0 +1,25 @@
+﻿@model Person
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+
+                <td>@Model.Name</td>
+                <td>@Model.City.Country.CountryName</td>
+                <td>@Model.City.CityName</td>
+
+                <td>
+                    <a asp-action="Edit" asp-controller="People" asp-route-id="@Model.Id" class="mr-2 text-warning">Edit</a>
+                    <a asp-action="Details" asp-controller="People" asp-route-id="@Model.Id" class="mr-2 text-info">Details</a>
+                    <a asp-action="Delete" asp-controller="People" asp-route-id="@Model.Id" class="mr-2 text-danger">Delete</a>
+                </td>
+                @*<td>
+            <a asp-action="Edit" asp-controller="People" asp-route-id="@Model.Id" class="mr-2 text-warning">Edit</a>
+            <a asp-action="Details" asp-controller="People" asp-route-id="@Model.Id" class="mr-2 text-info">Details</a>
+            @if(User.IsInRole("Admin")){
+            <a asp-action="Delete" asp-controller="People" asp-route-id="@Model.Id" class="mr-2 text-danger">Delete</a>
+            }
+        </td>*@
+            </tr>
+        </thead>
+    </table>

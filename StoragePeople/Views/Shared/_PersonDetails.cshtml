@@ -1,0 +1,15 @@
+﻿@model Person
+
+<h1>Person Details</h1>
+<div class="row font-weight-bold mt-3 d-flex-column align-items-sm-stretch">
+
+    <div class="col-5 mt-2">Namn</div>
+    <div class="col-5 mt-2">Phonenumber</div>
+    <div class="col-2 mt-2">City</div>
+</div>
+<div class="row">
+    <div class="col-5 mt-2">@Model.Name</div>
+    <div class="col-5 mt-2">@Model.PhoneNumber</div>
+    <div class="col-2 mt-2">@Model.City.CityName</div>
+</div>
+<a asp-action="People"class="btn btn-info mt-3 mr-2"></a>

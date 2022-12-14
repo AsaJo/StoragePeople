@@ -1,0 +1,9 @@
+﻿@model Person
+
+<div id="@("personId"+Model.Id)" class="row">
+    <div class="col-5">@Model.Name</div>
+    <div class="col-5 mt-2">@Model.PhoneNumber </div>
+    <div class="col-2 mt-2">@Model.City </div>
+    <div class="col"><button onclick="getSpaWithAjax('@Url.Action("SpaPersonDetails","AjaxPeople",new { id = Model.Id })','@("personId" + Model.Id)')" class="btn btn-dark">Details</button></div>
+
+</div>

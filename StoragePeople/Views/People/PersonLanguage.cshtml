@@ -1,0 +1,49 @@
+﻿@model PersonLanguageViewModel
+@{
+    ViewData["Title"] = "PersonLanguage";
+}
+
+<h2 class="mb-5">Person language @Model.Person.Name</h2>
+<div class="row">
+    <div class="col-6">
+        <h4 class="row mb-3">Speaks languages</h4>
+        <table class="table table-striped table-hover">
+            <tbody>
+                @foreach (Language speakesLanguage in Model.SpeakesLanguage)
+                {
+                    <tr>
+                        <th>@speakesLanguage.LanguageName</th>
+                        <th>
+                            <a asp-action="RemoveLanguage" asp-controller="People" asp-route-personId="@Model.Person.Id"
+                               asp-route-languageId="@speakesLanguage.Id" class="text-danger">Remove</a>
+                        </th>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="col-6">
+    <h4 class="row mb-3"> Availible languages</h4>
+    <table class="table table-striped table-hover">
+        <tbody>
+            @foreach (Language allLanguages in Model.AllLanguages)
+            {
+                <tr>
+                    <th>@allLanguages.LanguageName</th>
+                    <th>
+                        <a asp-action="AddLanguage" asp-controller="People" asp-route-personId="@Model.Person.Id"
+                           asp-route-languageId="@allLanguages.Id" class="text-dark">Add</a>
+                    </th>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+<a asp-action="Details" asp-route-Id="@Model.Person.Id">Back to Details</a>
+
+
