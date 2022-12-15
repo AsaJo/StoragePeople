@@ -16,6 +16,9 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
 .AddEntityFrameworkStores<PeopleDbContext>()
 .AddDefaultTokenProviders();
 
+//builder.Services.Configure<IdentityOptions>(options =>
+//{ });
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<PeopleDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
